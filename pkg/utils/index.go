@@ -1,16 +1,18 @@
 package utils
 
 import (
-	"fmt"
 	"reflect"
 )
 
-func CheckRequired(vars map[string]interface{}) {
+func CheckRequired(vars map[string]interface{}, textInit, textEnd string) string {
+	var message = ""
 	for key, value := range vars {
 		if isEmpty(value) {
-			fmt.Printf("Campo vazio: %s\n", key)
+			message += textInit + " " + key + " " + textEnd + "\n"
 		}
 	}
+
+	return message
 }
 
 func isEmpty(value interface{}) bool {
