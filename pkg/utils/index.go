@@ -8,7 +8,7 @@ func CheckRequired(vars map[string]interface{}, textInit, textEnd string) string
 	var message = ""
 	for key, value := range vars {
 		if isEmpty(value) {
-			message += textInit + " " + key + " " + textEnd + "\n"
+			message += textInit + " " + key + " " + textEnd + "\n\n"
 		}
 	}
 
